@@ -6,6 +6,6 @@ import { AppService } from './app.service';
 @Module({
   imports: [ConfigModule.forRoot()],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}
