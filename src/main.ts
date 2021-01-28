@@ -18,6 +18,10 @@ async function bootstrap() {
 
   app.use(helmet());
 
+  app.enableCors({
+    origin: process.env.HOST
+  });
+
   app.use(
     rateLimit({
       windowMs: 1 * 60 * 1000,
@@ -26,6 +30,8 @@ async function bootstrap() {
   );
 
   await app.listen(process.env.PORT);
+
+  console.log(`\nApplication running on ${process.env.HOST}:${process.env.PORT}`);
 }
 
 bootstrap();
