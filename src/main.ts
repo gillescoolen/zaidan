@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import * as rateLimit from 'express-rate-limit';
 import * as helmet from "helmet";
 
 async function bootstrap() {
@@ -16,6 +17,13 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.use(helmet());
+
+  app.use(
+    rateLimit({
+      windowMs: 1 * 60 * 1000,
+      max: 10,
+    }),
+  );
 
   await app.listen(process.env.PORT);
 }
