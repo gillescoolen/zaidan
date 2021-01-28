@@ -8,4 +8,4 @@
 2. Run `docker-compose up`
 3. Debug with Visual Studio Code using the provided launch configuration.
 
-*Did you add a package? Run the compose command like this:* `docker-compose up --build -V`
+*Did you add or remove a package? Run the compose command like this:* `docker-compose up --build -V`
