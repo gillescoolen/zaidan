@@ -1,4 +1,10 @@
 ## *Zaidan*
+
+### Warning!
+The current repository only includes a development setup.
+The production build will include a mongo-alpine image without open ports. 
+In addition, I'll include a couple of other optimisations. Stay tuned.
+
 ### Required software
 1. Node & NPM
 2. Docker & Docker Compose
