@@ -18,3 +18,10 @@ In addition, I'll include a couple of other optimisations. Stay tuned.
 
 ### API Documentation
 You can find the Swagger documentation at `/docs`.
+
+### To-do
+I plan to implement the following things:
+
+- [ ] User Authentication
+- [ ] Role-based Authorization
+- [ ] A Production Docker Setup

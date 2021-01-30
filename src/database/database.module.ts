@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         uri: configService.get('DB_URL'),
+        dbName: configService.get('DB_NAME'),
         user: configService.get('DB_USER'),
         pass: configService.get('DB_PASSWORD'),
         ssl: false,
