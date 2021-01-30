@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  main:
-    container_name: main
+  app:
+    container_name: app
     build:
       context: .
       target: development
@@ -13,20 +13,27 @@ services:
       - ${PORT}:${PORT}
       - 9229:9229
     command: npm run start:debug
-    env_file:
-      - .env
     networks:
       - backend
     depends_on:
-      - mongo
-  mongo:
+      - database
+  database:
     image: mvertes/alpine-mongo
-    container_name: mongo
+    container_name: database
+    environment:
+      MONGO_INITDB_DATABASE: database
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - '27017:27017'
     networks:
       - backend
+    volumes:
+      - data:/data/db
 
 networks:
   backend:
     driver: bridge
+
+volumes: 
+  data:
