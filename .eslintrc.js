@@ -22,6 +22,9 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'comma-dangle': 0,
-    'max-len': ["warn", { "code": 120 }]
+    'max-len': ["warn", { "code": 120 }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars-experimental": "error",
+    "no-unused-vars": "off"
   },
 };

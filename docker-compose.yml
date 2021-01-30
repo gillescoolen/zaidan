@@ -18,10 +18,9 @@ services:
     depends_on:
       - database
   database:
-    image: mvertes/alpine-mongo
+    image: mongo
     container_name: database
     environment:
-      MONGO_INITDB_DATABASE: database
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
