@@ -22,6 +22,6 @@ You can find the Swagger documentation at `/docs`.
 ### To-do
 I plan to implement the following things:
 
-- [ ] User Authentication
+- [x] User Authentication
 - [ ] Role-based Authorization
 - [ ] A Production Docker Setup
