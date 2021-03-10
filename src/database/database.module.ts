@@ -13,7 +13,7 @@ import { MongooseModule } from '@nestjs/mongoose';
         user: configService.get('DB_USER'),
         pass: configService.get('DB_PASSWORD'),
         ssl: false,
-        retryAttempts: 1
+        retryAttempts: 3
       })
     })
   ]
