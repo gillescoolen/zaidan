@@ -9,7 +9,7 @@ export class XMLInterceptor<T> implements NestInterceptor<T, string> {
     const regex = /\/xml/gi;
     const ctx = context.switchToHttp();
     const request = ctx.getRequest<Request>();
-    const header = request.headers['content-type'];
+    const header = request.headers['accept'];
     const requestedXML = header !== undefined && header.match(regex);
 
     return next.handle().pipe(map((data) => (requestedXML && typeof data === 'object' ? jsontoxml(data) : data)));
