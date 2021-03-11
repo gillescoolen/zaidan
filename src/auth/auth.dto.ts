@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import { IsArray, IsString } from 'class-validator';
+import { Role } from '../common/enums/role.enum';
 
 export class AuthDto {
   @IsString()
@@ -9,4 +10,8 @@ export class AuthDto {
   @IsString()
   @ApiProperty()
   password: string;
+
+  @IsArray()
+  @ApiProperty()
+  roles: Role[];
 }
